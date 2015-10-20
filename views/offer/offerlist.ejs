@@ -1,0 +1,64 @@
+<div>Offers</div>
+<div ng-repeat="offer in ctrl.chosenoffers">
+	<div class="chosenofferblock" >
+		<div class="offerheader">
+			<div class="offerselected">
+				<img ng-src="{{ctrl.selectedImages[offer.selected ? 1 : 0]}}" />
+			</div>
+			<div class="offerauthor">
+				offered by {{offer.author}} at {{offer.createdAt | date : 'yyyy.MM.dd'}}
+			</div>
+		</div>
+		<div class="offercontent">
+			<span><pre>{{offer.content}}</pre></span>
+		</div>
+		<div class="list-group">
+			<div class="list-group-item" ng-repeat="requiredfield in offer.requiredfields">
+				<span>{{requiredfield.field}}: </span>
+				<span>{{requiredfield.value}}</span>
+			</div>
+		</div>
+	</div>
+</div>
+<div ng-repeat="offer in ctrl.myoffers">
+	<div class="myofferblock">
+		<div class="offerheader">
+			<div class="offerselected">
+				<img ng-src="{{ctrl.selectedImages[offer.selected ? 1 : 0]}}" />
+			</div>
+			<div class="offerauthor">
+				offered by {{offer.author}} at {{offer.createdAt | date : 'yyyy.MM.dd'}}	
+				<button ng-show="!offer.selected" 
+					type="button" class="glyphicon glyphicon-remove" aria-hidden="true" ng-click="ctrl.deleteOffer(offer)" />
+			</div>
+		</div>
+		<div class="offercontent">
+			<span><pre>{{offer.content}}</pre></span>
+		</div>
+		<div class="list-group">
+			<div class="list-group-item" ng-repeat="requiredfield in offer.requiredfields">
+				<span>{{requiredfield.field}}: </span>
+				<span>{{requiredfield.value}}</span>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="offerblock" ng-repeat="offer in ctrl.offers">
+	<div class="offerheader">
+		<div class="offerselected">
+			<img ng-src="{{ctrl.selectedImages[offer.selected ? 1 : 0]}}" />
+		</div>
+		<div class="offerauthor">
+			offered by {{offer.author}} at {{offer.createdAt | date : 'yyyy.MM.dd'}}
+		</div>
+	</div>
+	<div class="offercontent">
+		<span><pre>{{offer.content}}</pre></span>
+	</div>
+	<div class="list-group">
+		<div class="list-group-item" ng-repeat="requiredfield in offer.requiredfields">
+			<span>{{requiredfield.field}}: </span>
+			<span>{{requiredfield.value}}</span>
+		</div>
+	</div>
+</div>

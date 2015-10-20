@@ -1,0 +1,57 @@
+.amo-signin-container {
+	margin: 100px auto;
+	width: 200px;
+	text-align: center;
+}
+
+.amo-signin-panel {
+	width: 200px;
+	display: table;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	background-color: white;
+}
+
+.amo-signin-list-panel {
+	padding: 10px;
+}
+
+.amo-btn-remove {
+	padding: 1px;
+	vertical-align: bottom;
+}
+
+.amo-profile-label {
+	font-weight: bold;
+	display: inline-block;
+	width: 100px;
+}
+
+.amo-profile-input-text {
+	width: 250px;
+}
+
+.amo-profile-listpanel {
+	padding: 10px;
+	display: table-cell;
+	min-height: 300px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	/*padding: 10px;*/	
+	width: 600px;
+	/*background-color: #d6fff9;*/
+}
+
+.amo-inline-listbox {
+	margin-left: 5px;
+	margin-right: 5px;
+	font-size: 13px;
+	display: inline-block;
+}
+
+.amo-profile-submitpanel {
+	text-align: right;
+}
+

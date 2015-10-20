@@ -1,0 +1,53 @@
+<div>Offers</div>
+<div ng-show="ctrl.isShowNewOffer">
+	<div class="amo-listblock" ng-if="ctrl.need">
+		<textarea style="width: 100%; height: 50px" ng-model="ctrl.newOffer.content"></textarea>
+		<div class="list-group">
+			<div class="amo-offer-listbox list-group-item" ng-repeat="requiredfield in ctrl.need.requiredfields">
+				<span class="amo-offer-label">{{requiredfield}}</span>
+				<input class="amo-offer-input" type="text" />
+			</div>
+		</div>
+		<div class="amo-offer-control">
+			<button type="button" class="btn btn-success" ng-click="ctrl.submitNewOffer(ctrl.need)">Offer</button>
+		</div>
+	</div>
+</div>
+<div class="myofferblock" ng-repeat="offer in ctrl.myoffers">
+	<div class="offerheader">
+		<div class="offerselected">
+			<img ng-src="{{ctrl.selectedImages[offer.selected ? 1 : 0]}}" />
+		</div>
+		<div class="offerauthor">
+			offered by {{offer.author}} at {{offer.createdAt | date : 'yyyy.MM.dd'}}
+		</div>
+	</div>
+	<div class="offercontent">
+		{{offer.content}}
+	</div>
+	<div class="list-group">
+		<div class="list-group-item" ng-repeat="requiredfield in offer.requiredfields">
+			<span>{{requiredfield.field}}: </span>
+			<span>{{requiredfield.value}}</span>
+		</div>
+	</div>
+</div>
+<div class="offerblock" ng-repeat="offer in ctrl.offers">
+	<div class="offerheader">
+		<div class="offerselected">
+			<img ng-src="{{ctrl.selectedImages[offer.selected ? 1 : 0]}}" />
+		</div>
+		<div class="offerauthor">
+			offered by {{offer.author}} at {{offer.createdAt | date : 'yyyy.MM.dd'}}
+		</div>
+	</div>
+	<div class="offercontent">
+		{{offer.content}}
+	</div>
+	<div class="list-group">
+		<div class="list-group-item" ng-repeat="requiredfield in offer.requiredfields">
+			<span>{{requiredfield.field}}: </span>
+			<span>{{requiredfield.value}}</span>
+		</div>
+	</div>
+</div>

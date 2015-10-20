@@ -1,0 +1,16 @@
+<div class="amo-listblock" ng-click="ctrl.showNeedDetail(need.id)" ng-repeat="need in ctrl.needs">
+	<div>
+		<span class="listblocksubject">{{need.subject}}</span>
+	</div>
+	<div>
+		<span style="font-size: 15px; color: gray; font-style: italic">
+			Posted by {{need.author}} at {{ need.createdAt | date : 'yyyy.MM.dd hh:mm:ss'}}
+		</span>
+	</div>
+	<div>
+		<span style="font-size: 15px; color: gray; font-style: italic">
+			Category: <span>{{need.category.value}}</span>
+			/ Location: <span>{{need.location.value}}</span>
+		</span>
+	</div>
+</div>

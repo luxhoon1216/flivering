@@ -1,0 +1,42 @@
+<div>Offers</div>
+<div class="offerblock" ng-repeat="offer in ctrl.chosenoffers">
+	<div class="offerheader">
+		<div class="offerselected">
+			<img ng-src="{{ctrl.selectedImages[offer.selected ? 1 : 0]}}"/>
+		</div>
+		<div class="offerauthor">
+			offered by {{offer.author}} at {{offer.createdAt | date : 'yyyy.MM.dd'}}
+		</div>
+	</div>
+	<div class="offercontent">
+		{{offer.content}}
+	</div>
+	<div class="list-group">
+		<div class="list-group-item" ng-repeat="requiredfield in offer.requiredfields">
+			<span>{{requiredfield.field}}: </span>
+			<span>{{requiredfield.value}}</span>
+		</div>
+	</div>
+</div>
+<div class="offerblock" ng-repeat="offer in ctrl.offers">
+	<div class="offerheader">
+		<div class="offerselected">
+			<img style="cursor: pointer" 
+				ng-src="{{ctrl.selectedImages[offer.selected ? 1 : 0]}}"
+				ng-click="ctrl.acceptOffer(offer)" />
+			<span class="notification" ng-show="!offer.checkedbyneedauthor">new</span>
+		</div>
+		<div class="offerauthor">
+			offered by {{offer.author}} at {{offer.createdAt | date : 'yyyy.MM.dd'}}
+		</div>
+	</div>
+	<div class="offercontent">
+		{{offer.content}}
+	</div>
+	<div class="list-group">
+		<div class="list-group-item" ng-repeat="requiredfield in offer.requiredfields">
+			<span>{{requiredfield.field}}: </span>
+			<span>{{requiredfield.value}}</span>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,36 @@
+<div style="display: table">
+	<div style="display: table-cell; width: 300px">
+		<span>Category:</span>
+    	<span>
+			<div class="btn-group" dropdown is-open="ctrl.status.isCategoryOpen">
+		      	<button type="button" class="btn btn-default dropdown-toggle amo-filter-button" dropdown-toggle>
+		        	{{ctrl.filterCategory.value}} <span class="caret"></span>
+		      	</button>
+		      	<ul class="amo-filter-dropdown-listbox dropdown-menu" role="menu">
+		      		<li><a href="#" ng-click="ctrl.filterCategoryChanged(null)">All</li>
+		        	<li ng-repeat="category in ctrl.curUser.categories">
+		        		<a href="#" ng-click="ctrl.filterCategoryChanged(category)">
+		        			{{category.value}}
+		        		</a>
+		        	</li>
+		      	</ul>
+		    </div>
+	    </span>
+    </div>
+    <div style="display: table-cell">
+    	<span>Location:</span>
+    	<span>
+		    <div class="btn-group" dropdown is-open="ctrl.status.isLocationOpen">
+		    	<button type="button" class="btn btn-default dropdown-toggle amo-filter-button" dropdown-toggle>
+			        {{ctrl.filterLocation.value}} <span class="caret"></span>
+			    </button>
+			    <ul class="amo-filter-dropdown-listbox dropdown-menu" role="menu">
+			    	<li><a href="#" ng-click="ctrl.filterLocationChanged(null)">All</li>
+			        <li ng-repeat="location in ctrl.curUser.locations">
+			        	<a href="#" ng-click="ctrl.filterLocationChanged(location)">{{location.value}}</a>
+			        </li>
+			    </ul>
+		    </div>
+	    </span>
+    </div>
+</div>

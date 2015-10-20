@@ -1,0 +1,17 @@
+.amo-offer-listbox {
+	margin-top: 15px;
+}
+
+.amo-offer-label {
+	font-weight: bold;
+	display: inline-block;
+	width: 100px;
+}
+
+.amo-offer-input-text {
+	width: 250px;
+}
+
+.amo-offer-control {
+	text-align: right;
+}

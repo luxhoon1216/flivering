@@ -1,0 +1,28 @@
+<div>
+	<span> 
+		Categories: 
+		<select ng-model="ctrl.filterCategory" ng-change="ctrl.filterChanged()">
+			<option value="All">All</option>
+			<% _.each(req.session.user.category, function(c) { %>
+				<% if (req.body && req.body.selcategories && req.body.selcategories == c) { %>
+					<option value="<%= c %>" selected><%= c %></option>
+				<% } else { %>
+					<option value="<%= c %>"><%= c %></option>
+				<% } %>
+			<% }) %>
+		</select>
+	</span>
+	<span style="margin-left: 30px"> 
+		Locations: 
+		<select ng-model="ctrl.filterLocation" ng-change="ctrl.filterChanged()">
+			<option value="All">All</option>
+			<% _.each(req.session.user.location, function(l) { %>
+				<% if (req.body && req.body.sellocations && req.body.sellocations == l) { %>
+					<option value="<%= l %>" selected><%= l %></option>
+				<% } else { %>
+					<option value="<%= l %>"><%= l %></option>
+				<% } %>						
+			<% }) %>
+		</select>
+	</span>
+</div>

@@ -1,0 +1,32 @@
+<div align="left" class="listpanel">	
+	<div>
+		<a style="cursor: pointer" ng-click="ctrl.showNeedList()"> < To List</a>
+	</div>
+	<div ng-if="ctrl.need">
+		<div class="amo-listblock" ng-if="ctrl.need">
+			<div>
+				<span class="listblocksubject">	{{ctrl.need.subject}} </span>
+				<span style='float: right'>
+					<button type="button" class="glyphicon glyphicon-remove" aria-hidden="true" ng-click="ctrl.deleteNeed(ctrl.need.id)" />
+				</span>
+			</div>
+			<div>				
+				<span style="font-size: 15px; color: gray; font-style: italic">
+					{{ctrl.need.author}} / posted at {{ctrl.need.createdAt | date : 'yyyy.MM.dd hh:mm:ss'}}
+				</span>
+			</div>
+			<div>
+				<span style="font-size: 15px; color: gray; font-style: italic">
+					<i> Category: <span>{{ctrl.need.category.value}}</span>
+						/ Location: <span>{{ctrl.need.location.value}}</span> </i>
+				</span>
+			</div>
+			<div style="padding-top: 5px">
+				<span><pre>{{ctrl.need.content}}</pre></span>
+			</div>
+		</div>
+		<div class="offerPanel">
+			<%- include offerlist %>
+		</div>
+	</div>
+</div>

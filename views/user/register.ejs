@@ -1,0 +1,84 @@
+<div ng-controller="registerController as ctrl">
+	<div ng-init="ctrl.init()">
+		<div class="list-group">
+			<div class="list-group-item">
+				<span class="amo-profile-label">User ID </span>
+				<input class="amo-profile-input-text" type="text" ng-model="ctrl.newUser.username" />
+				<span class="alert alert-danger" ng-show="ctrl.usernameMsg.length > 0">{{ ctrl.usernameMsg }}</span>
+			</div>
+			<div class="list-group-item">
+				<span class="amo-profile-label">Password </span>
+				<input class="amo-profile-input-text" type="password" ng-model="ctrl.newUser.password" />
+				<span class="alert alert-danger" ng-show="ctrl.passwordMsg.length > 0">{{ ctrl.passwordMsg }}</span>
+			</div>
+			<div class="list-group-item">
+				<span class="amo-profile-label">Password Confirmation</span>
+				<input class="amo-profile-input-text" type="password" ng-model="ctrl.tmppassword" />
+				<span class="alert alert-danger" ng-show="ctrl.tmppasswordMsg.length > 0">{{ ctrl.tmppasswordMsg }}</span>
+			</div>
+			<div class="list-group-item">
+				<span class="amo-profile-label">First Name </span>
+				<input class="amo-profile-input-text" type="text" ng-model="ctrl.newUser.firstname" />
+				<span class="alert alert-danger" ng-show="ctrl.firstnameMsg.length > 0">{{ ctrl.firstnameMsg }}</span>
+			</div>
+			<div class="list-group-item">
+				<span class="amo-profile-label">Last Name </span>
+				<input class="amo-profile-input-text" type="text" ng-model="ctrl.newUser.lastname" />
+				<span class="alert alert-danger" ng-show="ctrl.lastnameMsg.length > 0">{{ ctrl.lastnameMsg }}</span>
+			</div>
+			<div class="list-group-item">
+				<span class="amo-profile-label">Email </span>
+				<input class="amo-profile-input-text" type="email" ng-model="ctrl.newUser.email" />
+				<span class="alert alert-danger" ng-show="ctrl.emailMsg.length > 0">{{ ctrl.emailMsg }}</span>
+			</div>
+			<div class="list-group-item">
+				<div class="amo-listpanel">
+					<span class="amo-profile-label">CATEGORY: </span>
+					<span class="amo-inline-listbox" ng-repeat="category in ctrl.newUser.categories">
+						{{ category.value }}
+						<span class="amo-btn-remove btn amo-btn-remove glyphicon glyphicon-remove" aria-hidden="true" ng-click="ctrl.deleteCategory(category)" />
+					</span>
+				</div>
+				<div class="btn-group" dropdown is-open="ctrl.status.isCategoryOpen">
+			      <button type="button" class="btn btn-default dropdown-toggle amo-filter-button" dropdown-toggle>
+			        {{ctrl.selectedCategory.value}} <span class="caret"></span>
+			      </button>
+			      <ul class="amo-filter-dropdown-listbox dropdown-menu" role="menu">
+			        <li ng-repeat="category in ctrl.categories">
+			        	<a href="#" ng-click="ctrl.selectedCategory = category">{{category.value}}</a>
+			        </li>
+			      </ul>
+			    </div>
+				<input type="submit" value="Add" ng-click="ctrl.addCategory()" />
+				<span class="alert alert-danger" ng-show="ctrl.categoryMsg.length > 0">{{ ctrl.categoryMsg }}</span>
+			</div>
+			<div class="list-group-item">
+				<div class="amo-profile-listpanel">
+					<span class="amo-profile-label">LOCATION: </span>
+					<span class="amo-inline-listbox" ng-repeat="location in ctrl.newUser.locations">
+						{{ location.value }}
+						<span class="amo-btn-remove btn amo-btn-remove glyphicon glyphicon-remove" aria-hidden="true" ng-click="ctrl.deleteLocation(location)" />
+					</span>
+				</div>
+				<div class="btn-group" dropdown is-open="ctrl.status.isLocationOpen">
+			      <button type="button" class="btn btn-default dropdown-toggle amo-filter-button" dropdown-toggle>
+			        {{ctrl.selectedLocation.value}} <span class="caret"></span>
+			      </button>
+			      <ul class="amo-filter-dropdown-listbox dropdown-menu" role="menu">
+			        <li ng-repeat="location in ctrl.locations">
+			        	<a href="#" ng-click="ctrl.selectedLocation = location">{{location.value}}</a>
+			        </li>
+			      </ul>
+			    </div>
+				<input type="submit" value="Add" ng-click="ctrl.addLocation()" />
+				<span class="alert alert-danger" ng-show="ctrl.locationMsg.length > 0">{{ ctrl.locationMsg }}</span>
+			</div>
+			<div class="amo-profile-submitpanel list-group-item">
+				<button type="button" class="btn btn-success" ng-click="ctrl.register()">Register</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript" src="/js/register.js"></script>
+<link rel="stylesheet" type="text/css" href="/styles/user.css" />

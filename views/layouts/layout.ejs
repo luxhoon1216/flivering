@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--
+        For demonstration purposes, the `title` is dynamically set here based on
+        your `sails.config.appName` to show that you can inject data into layouts
+        exactly the same way as with your other view templates.
+    -->
+    <title><%- title %></title>
+
+    <!-- Viewport mobile tag for sensible mobile support -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+    <link rel="stylesheet" type="text/css" href="/styles/layout.css" />
+    <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css" />
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="/js/dependencies/angular.min.js"></script>
+    <script type="text/javascript" src="/js/dependencies/ui-bootstrap-tpls-0.12.0.min.js"></script>
+    <script type="text/javascript" src="/js/app.js"></script>
+
+    <!--
+
+      Stylesheets
+      ========================
+
+      You can link any CSS, LESS, or image files in your `assets` directory
+      as you would normally: using <link/> tags.
+      
+    -->
+
+    <!--
+
+      Support for LESS included by default
+      ================================================
+
+      LESS files are automatically compiled when they change using the Gruntfile
+      located in the top-level of this Sails app.  If you run into issues with styles
+      not reloading, check the Sails log output in your console for LESS compilation errors.
+      If necessary, shut down and then lift your app again.
+      
+    -->
+
+  </head>
+
+  <body style=" background-color:  #EEEEEE; margin: 0;" ng-app="amoModule">            
+      <div style="font-family: arial; background-color: #FCC65B; width: 100%">
+        <div style="display: table; height: 50px; margin: 0 auto; width: 800px">            
+          <div style="display: table-cell; vertical-align: bottom; width: 260px; color: white; padding: 0">
+            <div>
+              <a href="/"><img src="/images/amologo.png" width="100px" style="vertical-align: bottom"/></a>
+            </div>
+          </div>
+          <div style="display: table-cell; vertical-align: bottom; width: 500px; text-align: right">
+            <ul class="nav nav-tabs amo-top-menu">
+              <% if (req.path == "/need") { %>
+                <li role="presentation" class="active">
+              <% } else { %>
+                <li role="presentation">
+              <% } %>
+              <a href="/need">My Needs
+                <span class="glyphicon glyphicon-check" aria-hidden="true" ng-show="bNewOfferExist">{{newOfferCnt}}</span>
+              </a>
+              </li>
+
+              <% if (req.path == "/offer") { %>
+                <li role="presentation" class="active">
+              <% } else { %>
+                <li role="presentation">
+              <% } %>
+              <a href="/offer">My Offers
+                <span class="glyphicon glyphicon-check" aria-hidden="true" ng-show="bNewSelectedOfferExist">{{newSelectedOfferCnt}}</span>
+              </a>
+              </li>
+
+              <% if (req.path == "/otherneed") { %>
+                <li role="presentation" class="active"><a href="/otherneed">Find Needs</a></li>
+              <% } else { %>
+                <li role="presentation"><a href="/otherneed">Find Needs</a></li>
+              <% } %>
+            </ul>
+          </div>
+          <div style="display: table-cell; vertical-align: bottom" >
+            <% if (req.session.user) { %>
+              <div class="btn-group" style="width: 50px" dropdown>
+                <button type="button" class="btn btn-default dropdown-toggle amo-filter-button" dropdown-toggle>
+                  <%= req.session.user.username %><span class="caret"></span>
+                </button>
+                <ul class="amo-filter-dropdown-listbox dropdown-menu" role="menu">
+                  <li><a href="/profile">My Profile</a></li>
+                  <li><a href="/signout">Sign Out</a></li>
+                </ul>
+              </div>
+            <% } else { %>
+              <div class="btn-group" style="width: 50px" dropdown>
+                <button type="button" class="btn btn-default dropdown-toggle amo-filter-button" dropdown-toggle>
+                  Sign In <span class="caret"></span>
+                </button>
+                <ul class="amo-filter-dropdown-listbox dropdown-menu" role="menu">
+                  <li><a href="/signin">Sign In</a></li>
+                  <li><a href='/join'>Join</a></li>
+                </ul>
+              </div>
+              
+            <% } %>
+          </div>
+        </div>
+        
+      </div>
+
+      <div style="display: table; margin: 0 auto; ">
+        <div style="width: 800px;">
+            <%- body %>
+        </div>
+      </div>
+
+
+    <!--
+
+      Client-side Javascript
+      ========================
+
+      You can import any js files in your `assets` directory as you would 
+      normally: using <script></script> tags.
+
+      Here's an example of importing a few dependencies, in order:
+    -->
+    <!-- Bring in the socket.io client -->
+    <script type="text/javascript" src="/js/dependencies/socket.io.js"></script>
+    <!-- then beef it up with some convenience logic for talking to Sails.js -->
+    <!-- <script type="text/javascript" src="/js/sails.io.js"></script> -->
+    <!-- listen on socket.io for incoming messages -->
+    <!-- <script type="text/javascript" src="/js/app.js"></script> -->
+
+    <!-- Your scripts here? -->
+    <!-- Your scripts here? -->
+    <!-- Your scripts here? -->
+
+
+    <!--
+
+      Looking for client-side CoffeeScript or TypeScript?
+      ================================================
+
+      CoffeeScript and TypeScript precompilation are not installed by default,
+      but if you'd like to mix those features in, it is straightforward to
+      `npm install` the relevant grunt community modules and modify your Gruntfile
+      to use them.
+
+    -->
+
+
+
+    <!--
+
+      Another way: The Asset Linker
+      ========================
+
+      Sails supports a Grunt-based asset linker, to automatically inject 
+      <link> and <script> tags, as well any client-side templates you're using
+      into your HTML layouts and views, respecting dependencies.
+
+      You created this Sails app with the asset linker disabled.
+      If you change your mind, check out the docs on the subject:
+      http://sailsjs.org/#!documentation/asset-management
+
+    -->
+
+    </body>
+</html>

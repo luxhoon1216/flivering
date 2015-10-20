@@ -1,0 +1,71 @@
+<div ng-controller="profileController as ctrl">
+	<div ng-init="ctrl.init()">
+		<h3>{{ctrl.curUser.username}}'s Profile</h3>
+		<div class="list-group">
+			<div class="list-group-item"><span class="amo-profile-label">NAME: </span>
+			 {{ ctrl.curUser.firstname}} {{ ctrl.curUser.lastname }}</div>
+			<div class="list-group-item">
+				<span class="amo-profile-label">EMAIL: </span>
+				<span ng-show="!ctrl.bShowEmail">
+					{{ ctrl.curUser.email }}
+					<span class="btn glyphicon glyphicon-pencil" ng-click="ctrl.bShowEmail = !ctrl.bShowEmail" ></span>
+				</span>
+				<span ng-show="ctrl.bShowEmail">
+					<input type="text" class="amo-profile-input-text" ng-model="ctrl.tempEmail" />
+					<button type="button" class="btn btn-success" ng-click="ctrl.updateEmail()">Update</button>
+					<button type="button" class="btn btn-danger" ng-click="ctrl.cancelEmail()">Cancel</button>
+					<span class="alert alert-danger" ng-show="ctrl.emailMsg.length > 0">{{ ctrl.emailMsg }}</span>
+				</span>
+			</div>
+			<div class="list-group-item">
+				<div class="amo-listpanel">
+					<span class="amo-profile-label">CATEGORY: </span>
+					<span class="amo-inline-listbox" ng-repeat="category in ctrl.curUser.categories">
+						{{ category.value }}
+						<span class="amo-btn-remove btn glyphicon glyphicon-remove" aria-hidden="true" ng-click="ctrl.deleteCategory(category)" />
+					</span>
+				</div>
+				<div class="btn-group" dropdown is-open="ctrl.status.isCategoryOpen">
+			      <button type="button" class="btn btn-default dropdown-toggle amo-filter-button" dropdown-toggle>
+			        {{ctrl.selectedCategory.value}} <span class="caret"></span>
+			      </button>
+			      <ul class="amo-filter-dropdown-listbox dropdown-menu" role="menu">
+			        <li ng-repeat="category in ctrl.categories">
+			        	<a href="#" ng-click="ctrl.selectedCategory = category">{{category.value}}</a>
+			        </li>
+			      </ul>
+			    </div>
+				<input type="submit" value="Add" ng-click="ctrl.addCategory()" />
+				<span class="alert alert-danger" ng-show="ctrl.categoryMsg.length > 0">{{ ctrl.categoryMsg }}</span>
+			</div>
+			<div class="list-group-item">
+				<div class="amo-profile-listpanel">
+					<span class="amo-profile-label">LOCATION: </span>
+					<span class="amo-inline-listbox" ng-repeat="location in ctrl.curUser.locations">
+						{{ location.value }}
+						<span class="amo-btn-remove btn glyphicon glyphicon-remove" aria-hidden="true" ng-click="ctrl.deleteLocation(location)" />
+					</span>
+				</div>
+				<div class="btn-group" dropdown is-open="ctrl.status.isLocationOpen">
+			      <button type="button" class="btn btn-default dropdown-toggle amo-filter-button" dropdown-toggle>
+			        {{ctrl.selectedLocation.value}} <span class="caret"></span>
+			      </button>
+			      <ul class="amo-filter-dropdown-listbox dropdown-menu" role="menu">
+			        <li ng-repeat="location in ctrl.locations">
+			        	<a href="#" ng-click="ctrl.selectedLocation = location">{{location.value}}</a>
+			        </li>
+			      </ul>
+			    </div>
+				<input type="submit" value="Add" ng-click="ctrl.addLocation()" />
+				<span class="alert alert-danger" ng-show="ctrl.locationMsg.length > 0">{{ ctrl.locationMsg }}</span>
+			</div>
+			<div class="amo-profile-submitpanel list-group-item">
+				<button type="button" class="btn btn-success" ng-click="ctrl.register()">Save</button>
+				<button type="button" class="btn btn-danger" ng-click="ctrl.cancelUpdateProfile()">Cancel</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript" src="/js/profile.js"></script>
+<link rel="stylesheet" type="text/css" href="/styles/user.css" />

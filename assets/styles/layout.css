@@ -1,0 +1,299 @@
+@font-face {
+    font-family: "Home Mad Popsters";
+    src: url(/fonts/HomeMadPosters.woff);
+    font-weight:bold;
+}
+
+a {
+	text-decoration: none;	
+}
+
+img {
+	border-width: 0px;
+}
+
+/* left side bar */
+.amo-leftPanel {
+	vertical-align: top;
+	display: table-cell;
+	width: 200px;
+}
+
+.amo-sidebar-box {
+	margin-top: 10px;
+}
+
+/*.enterinput {
+	margin-top: 100px;
+}*/
+
+/*div.leftMenu {
+	padding: 5px;
+	font-family: arial;
+	font-size: 15px;
+}*/
+
+/*div.leftSubmenu {
+	padding: 5px;
+	font-family: arial;
+	font-size: 15px;
+	margin-left: 10px;
+}
+
+div.leftMenu.active {
+	background-color: #E0E0E0;
+}
+
+div.leftSubmenu.active {
+	background-color: #E0E0E0;
+}*/
+
+/**** list *****/
+.amo-listpanel {	
+	padding: 10px;
+	display: table-cell;
+	min-height: 300px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	/*padding: 10px;*/	
+	width: 600px;
+	/*background-color: #d6fff9;*/
+}
+
+.amo-listblock {		
+	cursor: pointer;
+	margin-top: 10px;
+	-webkit-border-radius: 5px; 
+	-moz-border-radius: 5px; 
+	border-radius: 5px; 
+	background-color: white; 
+	padding: 10px;
+}
+
+pre {
+	font-family: arial;
+}
+
+div.offerPanel {
+	padding-top: 10px;
+}
+
+div.offerlistblock {	
+	margin: 10px;
+	-webkit-border-radius: 5px; 
+	-moz-border-radius: 5px; 
+	border-radius: 5px; 
+	background-color: white; 
+	padding: 10px;
+}
+
+.listblocksubject {
+	/*font-family: "Home Mad Popsters";*/
+	font-family: arial;
+	font-size: 20px;	
+}
+
+.leftpanelbutton {
+	background-color: red; 
+	color: white;
+	margin-top: 10px; 
+	padding-top: 10px; 
+	padding-bottom: 10px;
+	border-right: 1px solid gray;
+	font-family: "Berlin Sans FB Demi";
+	font-size: 25px;
+	width: 99%;	
+	webkit-border-top-left-radius: 10px; 
+	-moz-border-top-left-radius: 10px; 
+	border-top-left-radius: 10px;	
+	webkit-border-bottom-left-radius: 10px; 
+	-moz-border-bottom-left-radius: 10px; 
+	border-bottom-left-radius: 10px;
+	box-shadow: 2px 2px 5px #888888;
+}
+
+.leftpanelbutton.cur {		
+	background-color: #ffc478;
+	color: gray;
+	width: 100%;
+	border-right: 0px;
+}
+
+.leftpanelbutton:hover {
+	background-color: #ffc478;
+	color: gray;
+}
+
+ul.amo-top-menu li {
+	width: 150px;
+	text-align: center;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+ul.amo-top-menu li a{
+	color: grey;
+}
+
+.toppanelbutton {
+	background-color: green; 
+	color: white;	
+	padding-top: 0px; 	
+	padding-left: 10px;
+	padding-right: 10px;
+	border-bottom: 1px solid gray;
+	font-family: "Berlin Sans FB Demi";
+	font-size: 20px;
+	width: 100%;	
+	webkit-border-top-left-radius: 10px; 
+	-moz-border-top-left-radius: 10px;
+	border-top-left-radius: 10px;
+	webkit-border-top-right-radius: 10px; 
+	-moz-border-top-right-radius: 10px;
+	border-top-right-radius: 10px;	
+}
+
+/*.toppanelbutton.active {			
+	background-color: red;
+	color: white;
+	border-bottom: 0px;
+}
+
+.toppanelbutton:hover {			
+	background-color: red;
+	color: white;
+}
+
+.rightleavebutton {
+	background-color: red; 
+	color: white;
+	margin-top: 10px; 
+	padding-left: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-family: "Berlin Sans FB Demi";
+	font-size: 20px;
+	width: 99%;	
+	webkit-border-top-right-radius: 10px; 
+	-moz-border-top-right-radius: 10px; 
+	border-top-right-radius: 10px;	
+	webkit-border-bottom-right-radius: 10px; 
+	-moz-border-bottom-right-radius: 10px; 
+	border-bottom-right-radius: 10px;
+	box-shadow: 2px 2px 5px #888888;
+}
+
+.rightleavebutton:hover {			
+	background-color: blue;	
+}
+
+.divbutton {
+	color: black;	
+	padding: 5px;
+	cursor: pointer;
+	font-family: arial;
+	font-size: 15px;	
+	webkit-border-radius: 10px; 
+	-moz-border-radius: 10px; 
+	border-radius: 10px;	
+	box-shadow: 2px 2px 5px #888888;
+}
+
+.divoffernotselected {
+	background-color:  #f0f0f0;
+	color: black;	
+	padding: 10px;
+	cursor: pointer;
+	font-family: "Berlin Sans FB Demi";
+	font-size: 20px;	
+	webkit-border-radius: 10px; 
+	-moz-border-radius: 10px; 
+	border-radius: 10px;	
+	box-shadow: 2px 2px 5px #888888;	
+}*/
+
+.linked {
+	cursor: pointer;
+}
+
+/* offers */
+div.offerblock {		
+	margin-top: 10px;
+	-webkit-border-radius: 5px; 
+	-moz-border-radius: 5px; 
+	border-radius: 5px; 
+	background-color: white; 
+	padding: 10px;
+}
+
+div.myofferblock {		
+	margin-top: 10px;
+	-webkit-border-radius: 5px; 
+	-moz-border-radius: 5px; 
+	border-radius: 5px; 
+	background-color: yellow; 
+	padding: 10px;
+}
+
+div.chosenofferblock {		
+	margin-top: 10px;
+	-webkit-border-radius: 5px; 
+	-moz-border-radius: 5px; 
+	border-radius: 5px;
+	border-color: black;
+	border-width: 2px;
+	border-style: solid;
+	background-color: white; 
+	padding: 10px;
+}
+
+.offerheader {
+	display: table;
+	width: 100%;
+}
+
+.offerselected {
+	display: table-cell;	
+}
+
+.offerauthor {
+	display: table-cell;
+	text-align: right;
+	color: grey;
+}
+
+.offercontent {
+	padding-top: 10px;
+}
+
+/* filter */
+.amo-filter-button {
+	width: 150px;
+	height: 30px;
+}
+
+.amo-filter-dropdown-listbox {
+	max-height: 250px;
+	overflow-y: auto;
+}
+
+/* notification */
+span.notification {
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	padding: 0px 2px 1px 2px;
+	background-color: red;
+	color: white;
+	font-size: 8px;
+}
+
+.errorMsg {
+	color: red;
+	font-size: 8px;
+}
+
+select.categoryList {
+	width: 150px;
+}
